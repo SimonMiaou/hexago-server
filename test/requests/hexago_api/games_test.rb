@@ -1,9 +1,10 @@
 require 'test_helper'
 
 class HexagoAPI
-  class GameTest < ActionDispatch::IntegrationTest
+  class GamesTest < ActionDispatch::IntegrationTest
     test 'Fetch a game' do
       game = create(:game)
+
       get "/games/#{game.id}"
       assert_response :success
 
