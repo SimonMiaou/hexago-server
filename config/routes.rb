@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  resources :games, only: [:show] do
+  constraints format: :json do
+    resources :games, only: [:show] do
+    end
   end
 end
