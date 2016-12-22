@@ -4,7 +4,7 @@ class CreateHexagons < ActiveRecord::Migration[5.0]
       t.integer :x, null: false
       t.integer :y, null: false
       t.integer :z, null: false
-      t.references :game
+      t.references :game, null: false
       t.references :user
       t.timestamps
     end

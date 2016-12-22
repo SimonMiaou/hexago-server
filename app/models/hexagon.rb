@@ -1,6 +1,4 @@
 class Hexagon < ApplicationRecord
   belongs_to :game
-  belongs_to :user
-
-  validates :game, presence: true
+  belongs_to :user, optional: true
 end

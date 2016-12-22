@@ -1,3 +1,6 @@
 class User < ApplicationRecord
-  has_many_and_belongs_to :games
+  has_many :games_users
+  has_many :games, through: :games_users
+
+  validates :name, presence: true
 end

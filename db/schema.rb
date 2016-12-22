@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20161222135101) do
     t.integer  "x",          null: false
     t.integer  "y",          null: false
     t.integer  "z",          null: false
-    t.integer  "game_id"
+    t.integer  "game_id",    null: false
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
