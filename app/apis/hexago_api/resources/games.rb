@@ -11,6 +11,13 @@ class HexagoAPI
           get do
             present @game, with: Entities::GameEntity
           end
+
+          resource :hexagons do
+            desc 'Fetch hexagons of a game'
+            get do
+              present @game.hexagons, with: Entities::HexagonEntity
+            end
+          end
         end
       end
     end
