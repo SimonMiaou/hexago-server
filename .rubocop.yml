@@ -1,0 +1,19 @@
+AllCops:
+  Include:
+    - '**/config.ru'
+    - '**/Gemfile'
+    - '**/Rakefile'
+    - 'lib/**/*.rake'
+  Exclude:
+    - 'db/schema.rb'
+    - 'vendor/**/*'
+    - 'bin/*'
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 160
+
+Style/Documentation:
+  Enabled: false
