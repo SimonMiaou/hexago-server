@@ -4,6 +4,9 @@ gem 'rails', '~> 5.0.1'
 
 gem 'grape'
 gem 'grape-entity'
+gem 'grape-swagger'
+gem 'grape-swagger-entity'
+gem 'grape-swagger-rails'
 gem 'puma', '~> 3.0'
 gem 'sqlite3'
 
