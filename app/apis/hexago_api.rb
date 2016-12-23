@@ -4,5 +4,10 @@ class HexagoAPI < Grape::API
 
   mount Resources::Games
 
-  add_swagger_documentation
+  add_swagger_documentation(
+    models: [
+      Entities::Game,
+      Entities::Hexagon
+    ]
+  )
 end
