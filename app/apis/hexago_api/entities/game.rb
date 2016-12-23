@@ -1,6 +1,6 @@
 class HexagoAPI
   module Entities
-    class GameEntity < Grape::Entity
+    class Game < Grape::Entity
       root 'games', 'game'
 
       expose :id

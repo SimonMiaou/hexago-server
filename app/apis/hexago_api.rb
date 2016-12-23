@@ -3,4 +3,11 @@ class HexagoAPI < Grape::API
   format :json
 
   mount Resources::Games
+
+  add_swagger_documentation(
+    models: [
+      Entities::Game,
+      Entities::Hexagon
+    ]
+  )
 end
