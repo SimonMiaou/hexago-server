@@ -10,9 +10,8 @@ class Hexagon < ApplicationRecord
   private
 
   def init_z_if_empty
-    return if z.present?
     return if x.blank? || y.blank?
-    self.z = 0 - x - y
+    self.z ||= 0 - x - y
   end
 
   def validate_coords
