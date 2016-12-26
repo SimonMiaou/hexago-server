@@ -4,6 +4,8 @@ class HexagoAPI
       root 'games', 'game'
 
       expose :id
+      expose :board_size
+      expose :number_of_players
     end
   end
 end
