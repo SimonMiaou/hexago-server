@@ -4,6 +4,7 @@ class Hexagon < ApplicationRecord
 
   validates :x, :y, :z, presence: true
   validate :validate_coords
+  validates :game, uniqueness: { scope: [:x, :y, :z] }
 
   before_validation :init_z_if_empty
 
