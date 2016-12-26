@@ -2,6 +2,18 @@ class HexagoAPI
   module Resources
     class Games < Grape::API
       resource :games do
+        desc 'Create a new game', entity: Entities::Game
+        params do
+          requires :game, type: Hash do
+            requires :number_of_players, type: Integer
+            requires :size, type: Integer
+          end
+        end
+        post do
+          game = Game.create(params[:game].to_h)
+          present game, with: Entities::Game
+        end
+
         route_param :game_id do
           before do
             @game = Game.find params[:game_id]
