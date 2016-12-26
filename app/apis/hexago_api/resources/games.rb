@@ -5,8 +5,8 @@ class HexagoAPI
         desc 'Create a new game', entity: Entities::Game
         params do
           requires :game, type: Hash do
-            requires :number_of_players, type: Integer
             requires :board_size, type: Integer
+            requires :number_of_players, type: Integer
           end
         end
         post do

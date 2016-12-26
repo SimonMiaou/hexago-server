@@ -3,8 +3,8 @@ require 'test_helper'
 class HexagoAPI
   class GamesTest < ActionDispatch::IntegrationTest
     test 'Create a game' do
-      number_of_players = rand(5) + 2
       board_size = rand(8) + 3
+      number_of_players = rand(5) + 2
       payload = {
         game: {
           board_size: board_size,
@@ -16,8 +16,8 @@ class HexagoAPI
       assert_response :created
 
       json = JSON.parse(response.body)
-      assert_equal number_of_players, json['game']['number_of_players']
       assert_equal board_size, json['game']['board_size']
+      assert_equal number_of_players, json['game']['number_of_players']
     end
 
     test 'Fetch a game' do
