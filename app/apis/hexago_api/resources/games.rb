@@ -6,7 +6,7 @@ class HexagoAPI
         params do
           requires :game, type: Hash do
             requires :number_of_players, type: Integer
-            requires :size, type: Integer
+            requires :board_size, type: Integer
           end
         end
         post do

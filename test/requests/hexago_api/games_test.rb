@@ -4,11 +4,11 @@ class HexagoAPI
   class GamesTest < ActionDispatch::IntegrationTest
     test 'Create a game' do
       number_of_players = rand(5) + 2
-      size = rand(10) + 1
+      board_size = rand(10) + 1
       payload = {
         game: {
-          number_of_players: number_of_players,
-          size: size
+          board_size: board_size,
+          number_of_players: number_of_players
         }
       }
 
@@ -17,7 +17,7 @@ class HexagoAPI
 
       json = JSON.parse(response.body)
       assert_equal number_of_players, json['game']['number_of_players']
-      assert_equal size, json['game']['size']
+      assert_equal board_size, json['game']['board_size']
     end
 
     test 'Fetch a game' do
@@ -29,7 +29,7 @@ class HexagoAPI
       json = JSON.parse(response.body)
       assert_equal game.id, json['game']['id']
       assert_equal game.number_of_players, json['game']['number_of_players']
-      assert_equal game.size, json['game']['size']
+      assert_equal game.board_size, json['game']['board_size']
     end
   end
 end
