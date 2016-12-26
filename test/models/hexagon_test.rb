@@ -11,13 +11,11 @@ class HexagonTest < ActiveSupport::TestCase
     game.hexagons.destroy_all
 
     assert build(:hexagon, game: game, x: 0, y: 0).save
-
     refute build(:hexagon, game: game, x: 0, y: 0).save
 
     assert build(:hexagon, x: 0, y: 0).save
 
     assert build(:hexagon, game: game, x: 0, y: 1).save
-
     assert build(:hexagon, game: game, x: 1, y: 0).save
   end
 end
