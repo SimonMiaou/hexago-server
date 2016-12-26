@@ -4,7 +4,7 @@ class HexagoAPI
   class GamesTest < ActionDispatch::IntegrationTest
     test 'Create a game' do
       number_of_players = rand(5) + 2
-      board_size = rand(10) + 1
+      board_size = rand(8) + 3
       payload = {
         game: {
           board_size: board_size,
