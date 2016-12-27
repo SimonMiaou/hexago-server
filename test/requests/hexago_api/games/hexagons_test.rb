@@ -5,7 +5,6 @@ class HexagoAPI
     class HexagonsTest < ActionDispatch::IntegrationTest
       test 'Fetch hexagons of a game' do
         game = create(:game)
-        Array.new(5) { create(:hexagon, game: game) }
 
         get "/games/#{game.id}/hexagons"
         assert_response :success

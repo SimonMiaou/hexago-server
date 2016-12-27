@@ -3,8 +3,9 @@ class Hexagon < ApplicationRecord
   belongs_to :user, optional: true
 
   validates :x, :y, :z, presence: true
-  validate :validate_coords
   validates :game, uniqueness: { scope: [:x, :y, :z] }
+  validate :validate_coords
+  validate :validate_distance_form_center
 
   before_validation :init_z_if_empty
 
@@ -18,5 +19,9 @@ class Hexagon < ApplicationRecord
   def validate_coords
     return if x.blank? || y.blank? || z.blank?
     errors.add(:base, 'x + y + z must equal 0') if (x + y + z).nonzero?
+  end
+
+  def validate_distance_form_center
+    errors.add(:base, :too_far_from_center) if ((x.abs + y.abs + z.abs) / 2) > game.board_size
   end
 end

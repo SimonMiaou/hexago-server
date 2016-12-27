@@ -21,3 +21,10 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        hexagon:
+          attributes:
+            base:
+              too_far_from_center: Must belong to the game board
