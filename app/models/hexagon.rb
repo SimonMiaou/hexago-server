@@ -22,6 +22,6 @@ class Hexagon < ApplicationRecord
   end
 
   def validate_distance_form_center
-    errors.add(:base, :too_far_from_center) if ((x.abs + y.abs + z.abs) / 2) > game.board_size
+    errors.add(:base, :not_in_the_board) if ((x.abs + y.abs + z.abs) / 2) > game.board_size
   end
 end
