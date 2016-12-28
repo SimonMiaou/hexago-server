@@ -28,8 +28,8 @@ class HexagoAPI
 
       json = JSON.parse(response.body)
       assert_equal game.id, json['game']['id']
-      assert_equal game.number_of_players, json['game']['number_of_players']
       assert_equal game.board_size, json['game']['board_size']
+      assert_equal game.number_of_players, json['game']['number_of_players']
     end
   end
 end

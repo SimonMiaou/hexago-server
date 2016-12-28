@@ -21,3 +21,10 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        hexagon:
+          attributes:
+            base:
+              not_in_the_board: Must belong to the game board
